@@ -74,11 +74,8 @@ z = fftData(x)
 fp = 214000 
 frx = x*fp/len(x)
 
-
 labviewFFT = labviewFftData(x)
 
-tdata = getTargetData(z)
-print 'target data = %12f' % tdata
 plt.figure(figsize=(8,4))
 plt.plot(x,y,label="$rawData(x)$",color="red",linewidth=2)
 plt.plot(frx,z,label="$fftData(x)$",color="blue",linewidth=2)

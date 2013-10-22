@@ -49,14 +49,19 @@ def unpackComplex(data):
 		imageList.append(image)
 	return (realList, imageList)
 
+#to frx
+PI = 3.1415926535898
+fp = 214000 
+
 x = np.linspace(0, 2047, 2047)
-#y = rawData(x)
 y = 300 * np.sin(x/34 - 0.5) + 2000
 z = np.fft.fft(y).real/len(y)
-print z
+
+frx = x*fp/len(x)
+
 plt.figure(figsize=(8,4))
 plt.plot(x,y,label="$rawData(x)$",color="red",linewidth=2)
-plt.plot(x,z,label="$fftData(x)$",color="yellow",linewidth=2)
+plt.plot(frx,z,label="$fftData(x)$",color="yellow",linewidth=2)
 #plt.plot(x,labviewFFT,label="$labviewFFT(x)$",color="green",linewidth=2)
 plt.xlabel("time/Frequency(Hz)")
 plt.ylabel("volt/Amplitude")
