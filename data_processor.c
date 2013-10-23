@@ -24,7 +24,7 @@ static int get_peak_pos(const kiss_fft_cpx *cout, int nfft, int start_pos) {
 	int pos = 0;
 	float maxdata = 0;
 	int i;
-	for (i = start_pos; i < nfft; i++) {
+	for (i = start_pos; i < nfft/2; i++) {
 		if ((cout[i].r - maxdata) > 0.0001) {
 			maxdata = cout[i].r;
 			pos = i;
